@@ -1,15 +1,24 @@
 <?php
 
-/* 
- *Funciones acceso y manejo de BD
- */
+/*
+* Funciones Acceso y Manejo de BBDD
+*/
 
-//Función de conexión con la base de datos MySQL.
-function conectaDb()
+define('BD_USUARIO', 'root');
+define('BD_PASSWORD', 'abc123.');
+define('BD_NOME', 'inventario');
+define('BD_CONEX_PDO', 'mysql:host=localhost;dbname='.BD_NOME);
+
+
+/**
+*
+* @return type
+*/
+function conectaBd()
 {
     try {
-        $db = new PDO("mysql:host=localhost", "root", "abc123.");
-        $db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
+        //$db = new PDO("mysql:host=localhost", "root", "abc123.");
+        $db = new PDO(BD_CONEX_PDO, BD_USUARIO, BD_PASSWORD);
         return($db);
     } catch (PDOException $e) {
         print "<p>Error: No puede conectarse con la base de datos.</p>\n";
@@ -17,4 +26,8 @@ function conectaDb()
         exit();
     }
 }
+
+
+
+?>
 

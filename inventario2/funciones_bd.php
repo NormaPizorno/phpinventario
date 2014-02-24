@@ -1,8 +1,8 @@
 <?php
 
-/* 
- * Funciones Acceso y Manejo de BBDD
- */
+/*
+* Funciones Acceso y Manejo de BBDD
+*/
 
 define('BD_USUARIO', 'root');
 define('BD_PASSWORD', 'abc123.');
@@ -11,9 +11,9 @@ define('BD_CONEX_PDO', 'mysql:host=localhost;dbname='.BD_NOME);
 
 
 /**
- * 
- * @return type
- */
+*
+* @return type
+*/
 function conectaBd()
 {
     try {
